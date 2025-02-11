@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Booking</title>
+    <link rel="stylesheet" href="./index.css">
+    <style>
+      /* Full-screen background image */
+      body {
+          margin: 0; /* Remove default margin */
+          height: 100vh; /* Make body height 100% of the viewport height */
+          background-image: url('OIP.jpg');
+          background-size: cover; /* Ensure the image covers the entire body */
+          background-position: center center; /* Center the image */
+          background-repeat: no-repeat; /* Prevent the image from repeating */
+          display: flex;
+          justify-content: center;
+          align-items: center;
+      }
+
+      /* Welcome Page Styling */
+      #welcome-page {
+          text-align: center;
+      }
+
+      /* Floating 'Book a Table' button */
+      #book-table-btn {
+          background-color: rgba(255, 165, 0, 0.8); /* Orange color with some transparency */
+          color: white;
+          font-size: 24px;
+          padding: 15px 30px;
+          border: none;
+          border-radius: 10px;
+          cursor: pointer;
+          box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+          transition: all 0.3s ease;
+      }
+
+      /* Hover effect on the button */
+      #book-table-btn:hover {
+          background-color: rgba(255, 165, 0, 1); /* Solid orange color on hover */
+          transform: scale(1.1); /* Slightly increase size */
+      }
+    </style>
+</head>
+<body>
+
+    <!-- Welcome Page -->
+    <div id="welcome-page" class="page">
+        <!-- 'Book a Table' Button -->
+        <button id="book-table-btn" onclick="goToRestaurantPage()">Book a Table</button>
+    </div>
+
+    <!-- Restaurant Section (Hidden initially) -->
+    <div id="restaurant-page" class="page" style="display: none;">
+        <header>
+            <div id="logo">Restaurant Booking</div>
+            <nav>
+                <a href="#">Home</a>
+                <a href="./restaurants.html">Restaurants</a>
+                <a href="./contact.html">Customer Care</a>
+            </nav>
+        </header>
+
+        <!-- Restaurant Selection -->
+        <section id="restaurants">
+            <h2>Choose Your Favorite Restaurant</h2>
+            <div class="restaurant-list">
+                <div class="restaurant" onclick="selectRestaurant('Restaurant A')">
+                    <h3>Restaurant A</h3>
+                    <p>Location: Downtown</p>
+                    <button>Book a Table</button>
+                </div>
+                <div class="restaurant" onclick="selectRestaurant('Restaurant B')">
+                    <h3>Restaurant B</h3>
+                    <p>Location: Midtown</p>
+                    <button>Book a Table</button>
+                </div>
+                <div class="restaurant" onclick="selectRestaurant('Restaurant C')">
+                    <h3>Restaurant C</h3>
+                    <p>Location: Uptown</p>
+                    <button>Book a Table</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Menu Section -->
+        <section id="menu">
+            <h2>Menu</h2>
+            <div class="menu">
+                <h3>Top Rated Dishes</h3>
+                <div class="dish">
+                    <p>Dish 1 <span class="stars">⭐⭐⭐⭐⭐</span></p>
+                </div>
+                <div class="dish">
+                    <p>Dish 2 <span class="stars">⭐⭐⭐⭐</span></p>
+                </div>
+                <div class="dish">
+                    <p>Dish 3 <span class="stars">⭐⭐⭐⭐</span></p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Customer Care Section -->
+        <section id="customer-care">
+            <h2>Customer Care</h2>
+            <p>If you have any issues, please contact our customer care at <strong>support@restaurant.com</strong>.</p>
+        </section>
+    </div>
+
+    <script>
+      // JavaScript to handle navigation to the restaurant page
+      function goToRestaurantPage() {
+          // Hide the welcome page
+          document.getElementById('welcome-page').style.display = 'none';
+
+          // Show the restaurant page
+          document.getElementById('restaurant-page').style.display = 'block';
+      }
+
+      // Dummy function for restaurant selection
+      function selectRestaurant(restaurant) {
+          alert('You selected ' + restaurant);
+      }
+    </script>
+
+</body>
+</html>
