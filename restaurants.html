@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Selection</title>
+    <style>
+        .menu {
+            display: none;
+        }
+        .restaurant {
+            margin-bottom: 20px;
+        }
+    </style>
+    <script>
+        // Function to toggle visibility of the menu when the "Menu" button is clicked
+        function toggleMenu(restaurantId) {
+            var menu = document.getElementById(restaurantId + "-menu");
+            if (menu.style.display === "none" || menu.style.display === "") {
+                menu.style.display = "block";
+            } else {
+                menu.style.display = "none";
+            }
+        }
+
+        // Function to handle "Book a Table" action (can be customized later)
+        function bookTable(restaurantName) {
+            alert('You have selected to book a table at ' + restaurantName);
+        }
+    </script>
+</head>
+<body>
+
+    <section id="restaurants">
+        <h2>Choose Your Favorite Restaurant</h2>
+
+        <!-- Restaurant A -->
+        <div class="restaurant">
+            <h3>Restaurant A</h3>
+            <p>Location: Downtown</p>
+            <button onclick="bookTable('Restaurant A')">Book a Table</button>
+            <button onclick="toggleMenu('restaurantA')">Show Menu</button>
+
+            <!-- Menu for Restaurant A -->
+            <section id="restaurantA-menu" class="menu">
+                <h2>Full Menu</h2>
+                <h3>Appetizers</h3>
+                <p>Dish A1 - $10</p>
+                <p>Dish A2 - $12</p>
+                <h3>Main Course</h3>
+                <p>Dish A3 - $20</p>
+                <p>Dish A4 - $25</p>
+                <h3>Desserts</h3>
+                <p>Dish A5 - $8</p>
+                <p>Dish A6 - $7</p>
+            </section>
+        </div>
+
+        <!-- Restaurant B -->
+        <div class="restaurant">
+            <h3>Restaurant B</h3>
+            <p>Location: Midtown</p>
+            <button onclick="bookTable('Restaurant B')">Book a Table</button>
+            <button onclick="toggleMenu('restaurantB')">Show Menu</button>
+
+            <!-- Menu for Restaurant B -->
+            <section id="restaurantB-menu" class="menu">
+                <h2>Full Menu</h2>
+                <h3>Appetizers</h3>
+                <p>Dish B1 - $9</p>
+                <p>Dish B2 - $11</p>
+                <h3>Main Course</h3>
+                <p>Dish B3 - $18</p>
+                <p>Dish B4 - $22</p>
+                <h3>Desserts</h3>
+                <p>Dish B5 - $6</p>
+                <p>Dish B6 - $5</p>
+            </section>
+        </div>
+
+        <!-- Restaurant C -->
+        <div class="restaurant">
+            <h3>Restaurant C</h3>
+            <p>Location: Uptown</p>
+            <button onclick="bookTable('Restaurant C')">Book a Table</button>
+            <button onclick="toggleMenu('restaurantC')">Show Menu</button>
+
+            <!-- Menu for Restaurant C -->
+            <section id="restaurantC-menu" class="menu">
+                <h2>Full Menu</h2>
+                <h3>Appetizers</h3>
+                <p>Dish C1 - $8</p>
+                <p>Dish C2 - $10</p>
+                <h3>Main Course</h3>
+                <p>Dish C3 - $19</p>
+                <p>Dish C4 - $23</p>
+                <h3>Desserts</h3>
+                <p>Dish C5 - $7</p>
+                <p>Dish C6 - $6</p>
+            </section>
+        </div>
+
+    </section>
+
+</body>
+</html>
