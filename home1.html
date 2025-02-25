@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Page</title>
+
+    <style>
+     body {
+        margin: 0; 
+        height: 100vh; 
+        background-image: url('book a table.png');
+        background-size: center; 
+        background-position: center center;
+        background-repeat: no-repeat;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start; 
+        flex-direction: column;
+    }
+
+    nav {
+        width: 100%;
+        text-align: center;
+        background-color: rgba(0, 0, 0, 0.5); 
+        padding: 20px 0;
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        z-index: 10; 
+    }
+
+    nav a {
+        color: white;
+        text-decoration: none;
+        font-size: 30px;
+        padding: 15px 25px;
+        margin: 10px;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+    }
+
+    nav a:hover {
+        background-color: #ff6347;
+    }
+
+    .page {
+        display: block;
+    }
+    </style>
+    <script>
+   function goToRestaurantPage() {
+       document.getElementById('welcome-page').style.display = 'none';
+       document.getElementById('restaurant-page').style.display = 'block';
+   }
+
+   function selectRestaurant(restaurant) {
+       alert('You selected ' + restaurant);
+   }
+    </script>
+</head>
+
+<body>
+    <div id="restaurant-page" class="page">
+        <div>
+            <nav>
+                <a href="./restaurants.html">Restaurants</a>
+                <a href="./register.html">Register</a>
+                <a href="./customer care.html">Customer Care</a>
+            </nav>
+        </div>
+    </div>
+</body>
+</html>
