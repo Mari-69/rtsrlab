@@ -6,27 +6,26 @@
     <title>Restaurant Booking</title>
     <link rel="stylesheet" href="./index.css">
     <style>
-      /* Full-screen background image */
+      
       body {
-          margin: 0; /* Remove default margin */
-          height: 100vh; /* Make body height 100% of the viewport height */
+          margin: 0; 
+          height: 100vh; 
           background-image: url('btn_home.png');
-          background-size: cover; /* Ensure the image covers the entire body */
-          background-position: center center; /* Center the image */
-          background-repeat: no-repeat; /* Prevent the image from repeating */
+          background-size: cover; 
+          background-position: center center;
+          background-repeat: no-repeat;
           display: flex;
           justify-content: center;
           align-items: center;
       }
 
-      /* Welcome Page Styling */
       #welcome-page {
           text-align: center;
       }
 
-      /* Floating 'Book a Table' button */
+     
       #book-table-btn {
-          background-color: rgba(255, 165, 0, 0.8); /* Orange color with some transparency */
+          background-color: rgba(255, 165, 0, 0.8); 
           color: white;
           font-size: 24px;
           padding: 15px 30px;
@@ -37,55 +36,35 @@
           transition: all 0.3s ease;
       }
 
-      /* Hover effect on the button */
+    
       #book-table-btn:hover {
-          background-color: rgba(255, 165, 0, 1); /* Solid orange color on hover */
-          transform: scale(1.1); /* Slightly increase size */
+          background-color: rgba(255, 165, 0, 1); 
+          transform: scale(1.1); 
       }
     </style>
 </head>
 <body>
 
-    <!-- Welcome Page -->
+
     <div id="welcome-page" class="page">
-        <!-- 'Book a Table' Button -->
+      
         <button id="book-table-btn" onclick="goToRestaurantPage()">Book a Table</button>
+        <script>
+            function goToRestaurantPage()
+            {
+                window.location.href="home1.html";
+            }
+        </script>
+       
     </div>
 
-    <!-- Restaurant Section (Hidden initially) -->
-    <div id="restaurant-page" class="page" style="display: none;">
-        <header>
-            <div id="logo">Restaurant Booking</div>
-            <nav>
-                <a href="./restaurants.html">Restaurants</a>
-                <a href="./customer care.html">Customer Care</a>
-                
-            </nav>
-        </header>
-        
+  
+   
 
-        <!-- Customer Care Section 
-        <section id="customer-care">
-            <h2>Customer Care</h2>
-            <p>If you have any issues, please contact our customer care at <strong>support@restaurant.com</strong>.</p>
-        </section>-->
+       
     </div>
 
-    <script>
-      // JavaScript to handle navigation to the restaurant page
-      function goToRestaurantPage() {
-          // Hide the welcome page
-          document.getElementById('welcome-page').style.display = 'none';
-
-          // Show the restaurant page
-          document.getElementById('restaurant-page').style.display = 'block';
-      }
-
-      // Dummy function for restaurant selection
-      function selectRestaurant(restaurant) {
-          alert('You selected ' + restaurant);
-      }
-    </script>
+    
 
 </body>
 </html>
