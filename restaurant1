@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Selection</title>
+    <style>
+        /* General reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        header {
+            background-color: #009688; /* Teal */
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-size: 2em;
+            animation: slideIn 2s ease-out;
+        }
+
+        /* Slide-in effect for header */
+        @keyframes slideIn {
+            0% {
+                transform: translateY(-100%);
+            }
+            100% {
+                transform: translateY(0);
+            }
+        }
+
+        section#restaurants {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: #009688; /* Teal */
+        }
+
+        /* Restaurant styles */
+        .restaurant {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 30px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .restaurant img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .restaurant-details {
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .restaurant-details h3 {
+            font-size: 1.5em;
+            color: #009688; /* Teal */
+        }
+
+        .restaurant-details p {
+            font-size: 1em;
+            color: #777;
+        }
+
+        .restaurant-buttons {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            background-color: #f9f9f9;
+        }
+
+        .restaurant-buttons button {
+            background-color: #009688; /* Teal */
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+
+        .restaurant-buttons button:hover {
+            background-color: #00796b; /* Darker teal */
+        }
+
+        .restaurant-buttons a {
+            text-decoration: none;
+            color: white;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .restaurant-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .restaurant-buttons button {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Explore Top Restaurants</h1>
+    </header>
+
+    <section id="restaurants">
+        <h2>Choose Your Favorite Restaurant</h2>
+
+        <!-- Restaurant 1 -->
+        <div id="restaurant1" class="restaurant">
+            <img src="r1.jpg" alt="Restaurant 1">
+            <div class="restaurant-details">
+                <h3>Restaurant 1</h3>
+                <p>Location: Downtown</p>
+            </div>
+            <div class="restaurant-buttons">
+                <button onclick="bookTable('Restaurant 1')">
+                    <a href="./bookatable1.html">Book a Table</a>
+                </button>
+                <button onclick="toggleMenu('restaurant1')">
+                    <a href="./menu1.html">View Menu</a>
+                </button>
+            </div>
+        </div>
+
+        <!-- Restaurant 2 -->
+        <div id="restaurant2" class="restaurant">
+            <img src="r2.jpg" alt="Restaurant 2">
+            <div class="restaurant-details">
+                <h3>Restaurant 2</h3>
+                <p>Location: Midtown</p>
+            </div>
+            <div class="restaurant-buttons">
+                <button onclick="bookTable('Restaurant 2')">
+                    <a href="./bookatable2.html">Book a Table</a>
+                </button>
+                <button onclick="toggleMenu('restaurant2')">
+                    <a href="./menu2.html">View Menu</a>
+                </button>
+            </div>
+        </div>
+
+        <!-- Restaurant 3 -->
+        <div id="restaurant3" class="restaurant">
+            <img src="r3.webp" alt="Restaurant 3">
+            <div class="restaurant-details">
+                <h3>Restaurant 3</h3>
+                <p>Location: Uptown</p>
+            </div>
+            <div class="restaurant-buttons">
+                <button onclick="bookTable('Restaurant 3')">
+                    <a href="./bookatable3.html">Book a Table</a>
+                </button>
+                <button onclick="toggleMenu('restaurant3')">
+                    <a href="./menu3.html">View Menu</a>
+                </button>
+            </div>
+        </div>
+
+        <!-- Restaurant 4 -->
+        <div id="restaurant4" class="restaurant">
+            <img src="r4.jpg" alt="Restaurant 4">
+            <div class="restaurant-details">
+                <h3>Restaurant 4</h3>
+                <p>Location: Suburb</p>
+            </div>
+            <div class="restaurant-buttons">
+                <button onclick="bookTable('Restaurant 4')">
+                    <a href="./bookatable4.html">Book a Table</a>
+                </button>
+                <button onclick="toggleMenu('restaurant4')">
+                    <a href="./menu4.html">View Menu</a>
+                </button>
+            </div>
+        </div>
+
+        <!-- Restaurant 5 -->
+        <div id="restaurant5" class="restaurant">
+            <img src="r5.jpg" alt="Restaurant 5">
+            <div class="restaurant-details">
+                <h3>Restaurant 5</h3>
+                <p>Location: Garden District</p>
+            </div>
+            <div class="restaurant-buttons">
+                <button onclick="bookTable('Restaurant 5')">
+                    <a href="./bookatable5.html">Book a Table</a>
+                </button>
+                <button onclick="toggleMenu('restaurant5')">
+                    <a href="./menu5.html">View Menu</a>
+                </button>
+            </div>
+        </div>
+
+        <!-- Restaurant 6 -->
+        <div id="restaurant6" class="restaurant">
+            <img src="r6.jpg" alt="Restaurant 6">
+            <div class="restaurant-details">
+                <h3>Restaurant 6</h3>
+                <p>Location: Beachside</p>
+            </div>
+            <div class="restaurant-buttons">
+                <button onclick="bookTable('Restaurant 6')">
+                    <a href="./bookatable6.html">Book a Table</a>
+                </button>
+                <button onclick="toggleMenu('restaurant6')">
+                    <a href="./menu6.html">View Menu</a>
+                </button>
+            </div>
+        </div>
+
+        <!-- Restaurant 7 -->
+        <div id="restaurant7" class="restaurant">
+            <img src="r7.jpg" alt="Restaurant 7">
+            <div class="restaurant-details">
+                <h3>Restaurant 7</h3>
+                <p>Location: City Center</p>
+            </div>
+            <div class="restaurant-buttons">
+                <button onclick="bookTable('Restaurant 7')">
+                    <a href="./bookatable7.html">Book a Table</a>
+                </button>
+                <button onclick="toggleMenu('restaurant7')">
+                    <a href="./menu7.html">View Menu</a>
+                </button>
+            </div>
+        </div>
+
+        <!-- Restaurant 8 -->
+        <div id="restaurant8" class="restaurant">
+            <img src="r8.png" alt="Restaurant 8">
+            <div class="restaurant-details">
+                <h3>Restaurant 8</h3>
+                <p>Location: Old Town</p>
+            </div>
+            <div class="restaurant-buttons">
+                <button onclick="bookTable('Restaurant 8')">
+                    <a href="./bookatable8.html">Book a Table</a>
+                </button>
+                <button onclick="toggleMenu('restaurant8')">
+                    <a href="./menu8.html">View Menu</a>
+                </button>
+            </div>
+        </div>
+
+        <!-- Restaurant 9 -->
+        <div id="restaurant9" class="restaurant">
+            <img src="r9.jpg" alt="Restaurant 9">
+            <div class="restaurant-details">
+                <h3>Restaurant 9</h3>
+                <p>Location: Riverside</p>
+            </div>
+            <div class="restaurant-buttons">
+                <button onclick="bookTable('Restaurant 9')">
+                    <a href="./bookatable9.html">Book a Table</a>
+                </button>
+                <button onclick="toggleMenu('restaurant9')">
+                    <a href="./menu9.html">View Menu</a>
+                </button>
+            </div>
+        </div>
+
+        <!-- Restaurant 10 -->
+        <div id="restaurant10" class="restaurant">
+            <img src="r10.jpg" alt="Restaurant 10">
+            <div class="restaurant-details">
+                <h3>Restaurant 10</h3>
+                <p>Location: West End</p>
+            </div>
+            <div class="restaurant-buttons">
+                <button onclick="bookTable('Restaurant 10')">
+                    <a href="./bookatable10.html">Book a Table</a>
+                </button>
+                <button onclick="toggleMenu('restaurant10')">
+                    <a href="./menu10.html">View Menu</a>
+                </button>
+            </div>
+        </div>
+
+        <!-- Restaurant 11 -->
+        <div id="restaurant11" class="restaurant">
+            <img src="r11.jpg" alt="Restaurant 11">
+            <div class="restaurant-details">
+                <h3>Restaurant 11</h3>
+                <p>Location: Eastside</p>
+            </div>
+            <div class="restaurant-buttons">
+                <button onclick="bookTable('Restaurant 11')">
+                    <a href="./bookatable11.html">Book a Table</a>
+                </button>
+                <button onclick="toggleMenu('restaurant11')">
+                    <a href="./menu11.html">View Menu</a>
+                </button>
+            </div>
+        </div>
+
+        <!-- Restaurant 12 -->
+        <div id="restaurant12" class="restaurant">
+            <img src="r12.jpg" alt="Restaurant 12">
+            <div class="restaurant-details">
+                <h3>Restaurant 12</h3>
+                <p>Location: North Avenue</p>
+            </div>
+            <div class="restaurant-buttons">
+                <button onclick="bookTable('Restaurant 12')">
+                    <a href="./bookatable12.html">Book a Table</a>
+                </button>
+                <button onclick="toggleMenu('restaurant12')">
+                    <a href="./menu12.html">View Menu</a>
+                </button>
+            </div>
+        </div>
+
+        <!-- Continue with the remaining restaurants until Restaurant 20 -->
+
+    </section>
+
+</body>
+</html>
